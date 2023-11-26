@@ -29,7 +29,6 @@ Check Todo list:
 
 Todo list:
 - Add more realistic timing. Currently everything happends instantly each second
-- Add tracker for how long elevators stay inactive during the day
 - Add tracker to compare efficency when adding more elevators to a building or increase speed of each elevator
 - Add rushhours when more people spawns in group
 - Add features to people:
