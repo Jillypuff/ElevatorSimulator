@@ -19,7 +19,9 @@ git clone https://github.com/Jillypuff/ElevatorSimulator.git
 ## Usage
 - Just build and run solution
 - To change frequency of people spawning change the spawnProbability variable in SimulationController.cs
-- To change opening and closing time of buildings change the corresponding variable in Building.cs
+- To change opening and closing time and/or numbers of floors in buildings change the corresponding variable in Building.cs
+- To change elevator capacity change MaximumAmountOfPeople in Elevator.cs
+
 
 ## Contributing
 

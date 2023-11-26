@@ -22,7 +22,7 @@
             CurrentFloor = 1;
             TargetFloor = 1;
             PeopleInElevator = [];
-            MaxAmountOfPeople = 4;
+            MaxAmountOfPeople = 5;
             Direction = ElevatorDirection.Stationary;
             ElevatorQueue = [];
         }

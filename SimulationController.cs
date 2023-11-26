@@ -24,8 +24,9 @@
 
         public void Results()
         {
-            Console.WriteLine($"Elevator was idle for {statTracker.secondsElevatorIsIdle / (3600)} hour," +
-                              $"{statTracker.secondsElevatorIsIdle % 3600 / 60} minutes and {statTracker.secondsElevatorIsIdle % 60}");
+            Console.WriteLine($"Elevator was idle for {statTracker.secondsElevatorIsIdle / (3600)} hours," +
+                              $"{statTracker.secondsElevatorIsIdle % 3600 / 60} minutes and " +
+                              $"{statTracker.secondsElevatorIsIdle % 60} seconds.");
         }
 
         private void OneDay()
@@ -55,13 +56,13 @@
 
         private void SpawnPerson()
         {
-            if (CurrentTime < building.OpeningTime || CurrentTime > building.ClosingTime)
+            if (CurrentTime < building.OpeningTime || CurrentTime + 1 > building.ClosingTime)
             {
                 return;
             }
             if(random.Next(100) > spawnProbability)
             {
-                Person person = new(CurrentTime, building.Floors);
+                Person person = new(CurrentTime, building.Floors, building.ClosingTime);
                 building.PeopleInBuilding.Add(person);
                 elevator.ElevatorQueue.Add(person);
             }
