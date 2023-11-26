@@ -13,7 +13,8 @@ Currently working base build with no real features
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/Jillypuff/ElevatorSimulator.git```
+git clone https://github.com/Jillypuff/ElevatorSimulator.git
+```
 
 ## Usage
 - Just build and run solution
