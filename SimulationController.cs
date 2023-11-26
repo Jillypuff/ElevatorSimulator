@@ -4,19 +4,28 @@
     {
         private readonly Building building;
         private readonly Elevator elevator;
+        private readonly StatTracker statTracker;
         int CurrentTime = 0;
         readonly Random random = new();
         readonly int spawnProbability = 95;
         
-        public SimulationController(Building building, Elevator elevator)
+        public SimulationController(Building building, Elevator elevator, StatTracker statTracter)
         {
             this.building = building;
             this.elevator = elevator;
+            this.statTracker = statTracter;
         }
 
         public void StartSimulation()
         {
             OneDay();
+            Results();
+        }
+
+        public void Results()
+        {
+            Console.WriteLine($"Elevator was idle for {statTracker.secondsElevatorIsIdle / (3600)} hour," +
+                              $"{statTracker.secondsElevatorIsIdle % 3600 / 60} minutes and {statTracker.secondsElevatorIsIdle % 60}");
         }
 
         private void OneDay()
@@ -68,6 +77,7 @@
             if (elevator.Direction == Elevator.ElevatorDirection.Stationary
                 && elevator.ElevatorQueue.Count == 0)
             {
+                statTracker.secondsElevatorIsIdle++;
                 return;
             }
             if (elevator.PeopleInElevator.Count > 0)
