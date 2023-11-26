@@ -6,6 +6,7 @@
         private readonly Elevator elevator;
         int CurrentTime = 0;
         readonly Random random = new();
+        readonly int spawnProbability = 95;
         
         public SimulationController(Building building, Elevator elevator)
         {
@@ -49,7 +50,6 @@
             {
                 return;
             }
-            int spawnProbability = 95;
             if(random.Next(100) > spawnProbability)
             {
                 Person person = new(CurrentTime, building.Floors);
